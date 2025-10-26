@@ -5,6 +5,8 @@ import '../widgets/sleep_card.dart';
 import '../widgets/sleep_chart.dart';
 import 'add_record_screen.dart';
 import '../widgets/sleep_summary.dart';
+import 'insights_screen.dart';
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -17,6 +19,19 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('SleepSync'),
         centerTitle: true,
+        actions: [
+  IconButton(
+    icon: const Icon(Icons.analytics_outlined),
+    tooltip: 'View Insights',
+    onPressed: () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (_) => const InsightsScreen()),
+      );
+    },
+  ),
+],
+
       ),
       body: SafeArea(
         child: SingleChildScrollView(
